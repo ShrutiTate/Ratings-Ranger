@@ -1,6 +1,9 @@
+Got it 👍 Here’s a **cleaned-up, ready-to-use `README.md`** for your **Ratings-Ranger** project:
+
+```markdown
 # 🏪 Rating Ranger
 
-Rating Ranger is a simple store rating application where:
+Rating Ranger is a simple store rating application where:  
 - **Admins** can manage users and stores  
 - **Store Owners** can add and manage their stores  
 - **Users** can rate stores (1–5 stars)  
@@ -18,16 +21,26 @@ Rating Ranger is a simple store rating application where:
 ---
 
 ## 📂 Project Structure
-rating-ranger-backend/
-│── server.js # Entry point
-│── routes/ # API routes
-│── controllers/ # Route controllers
-│── models/ # Database queries
-│── db/ # Database connection
-│── package.json # Dependencies & scripts
-│── .env.example # Example environment variables
-│── README.md # Project documentation
 
+```
+
+rating-ranger-backend/
+│── server.js          # Entry point
+│── routes/            # API routes
+│── controllers/       # Route controllers
+│── models/            # Database queries
+│── db/                # Database connection
+│── package.json       # Dependencies & scripts
+│── .env.example       # Example environment variables
+│── README.md          # Project documentation
+
+rating-ranger-frontend/
+│── src/               # React source code
+│── public/            # Public assets
+│── package.json       # Frontend dependencies & scripts
+│── README.md          # Frontend documentation
+
+````
 
 ---
 
@@ -35,15 +48,31 @@ rating-ranger-backend/
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/rating-ranger-backend.git
-cd rating-ranger-backend
-2. Install dependencies
+git clone https://github.com/ShrutiTate/Ratings-Ranger.git
+cd Ratings-Ranger
+````
+
+### 2. Install dependencies
+
+For backend:
+
+```bash
+cd backend
 npm install
 ```
-3. Configure environment
 
-Create a .env file in the root:
+For frontend:
 
+```bash
+cd frontend
+npm install
+```
+
+### 3. Configure environment
+
+Create a `.env` file in the `backend/` root:
+
+```env
 DB_USER=your_db_user
 DB_PASS=your_db_pass
 DB_NAME=rating_ranger
@@ -51,11 +80,13 @@ DB_HOST=localhost
 DB_PORT=5432
 JWT_SECRET=your_secret_key
 PORT=5000
+```
 
-4. Setup Database
+### 4. Setup Database
 
-Run the SQL scripts inside your Postgres:
+Run the SQL scripts in PostgreSQL:
 
+```sql
 -- Users Table
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -86,50 +117,60 @@ CREATE TABLE ratings (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE (user_id, store_id)
 );
+```
 
-5. Run the server
+### 5. Run the server
+
+From `backend/`:
+
+```bash
 npm start
-
+```
 
 Server will run at:
+👉 `http://localhost:5000`
 
-http://localhost:5000
+---
 
-🧪 API Endpoints
-Auth
+## 🧪 API Endpoints
 
-POST /register → Register new user
+### Auth
 
-POST /login → Login and get JWT token
+* `POST /register` → Register new user
+* `POST /login` → Login and get JWT token
 
-Stores
+### Stores
 
-POST /stores → Add a store (store owner only)
+* `POST /stores` → Add a store (store owner only)
+* `GET /stores` → List all stores
+* `GET /stores/:id` → Get store details
 
-GET /stores → List all stores
+### Ratings
 
-GET /stores/:id → Get store details
+* `POST /ratings` → Rate a store
+* `GET /ratings/:storeId` → Get ratings for a store
 
-Ratings
+---
 
-POST /ratings → Rate a store
+## 📌 Tech Stack
 
-GET /ratings/:storeId → Get ratings for a store
+* **Backend:** Node.js, Express.js
+* **Frontend:** React.js
+* **Database:** PostgreSQL
+* **Auth:** JWT + bcrypt
+* **ORM/Queries:** Native SQL queries with `pg`
 
-📌 Tech Stack
+---
 
-Backend: Node.js, Express.js
-
-Database: PostgreSQL
-
-Auth: JWT + bcrypt
-
-ORM/Queries: Native SQL queries with pg
-
-🤝 Contribution
+## 🤝 Contribution
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
 
-📜 License
+---
+
+## 📜 License
 
 MIT License © 2025 ShrutiTate
+
+```
+
