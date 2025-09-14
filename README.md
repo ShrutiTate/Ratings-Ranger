@@ -1,6 +1,4 @@
-Got it 👍 Here’s a **cleaned-up, ready-to-use `README.md`** for your **Ratings-Ranger** project:
 
-```markdown
 # 🏪 Rating Ranger
 
 Rating Ranger is a simple store rating application where:  
